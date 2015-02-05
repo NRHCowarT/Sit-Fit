@@ -16,6 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jze-zM-MIQ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="1qf-VP-qPB"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zib-oU-55R">
                                 <rect key="frame" x="310" y="540" width="270" height="40"/>
                                 <color key="backgroundColor" red="0.054330116230000003" green="0.7035787563" blue="0.58258311110000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -52,21 +58,42 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIT-v4-has">
+                                <rect key="frame" x="20" y="240" width="560" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nof-e1-rZo"/>
+                                </constraints>
+                                <state key="normal" title="Take Picture">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePicture:" destination="BnD-be-x6K" eventType="touchUpInside" id="TIw-oO-xYx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="tIT-v4-has" firstAttribute="top" secondItem="zbB-xY-qhH" secondAttribute="top" constant="240" id="2Fn-RP-Dnu"/>
                             <constraint firstItem="AbK-7l-gSq" firstAttribute="leading" secondItem="zbB-xY-qhH" secondAttribute="leading" constant="20" id="BIr-wy-n7y"/>
+                            <constraint firstAttribute="trailing" secondItem="Jze-zM-MIQ" secondAttribute="trailing" id="CiP-1v-nO3"/>
                             <constraint firstItem="v7P-uf-vBO" firstAttribute="top" secondItem="KMA-6O-tkE" secondAttribute="bottom" constant="20" id="FHI-pC-zV1"/>
+                            <constraint firstAttribute="trailing" secondItem="tIT-v4-has" secondAttribute="trailing" constant="20" id="Hwk-0w-rkm"/>
                             <constraint firstItem="v7P-uf-vBO" firstAttribute="top" secondItem="zib-oU-55R" secondAttribute="bottom" constant="20" id="KKg-BA-Bcv"/>
+                            <constraint firstItem="Jze-zM-MIQ" firstAttribute="leading" secondItem="zbB-xY-qhH" secondAttribute="leading" id="Kcj-fU-1hY"/>
                             <constraint firstItem="zib-oU-55R" firstAttribute="leading" secondItem="KMA-6O-tkE" secondAttribute="trailing" constant="20" id="Sra-qB-jaW"/>
                             <constraint firstItem="KMA-6O-tkE" firstAttribute="leading" secondItem="zbB-xY-qhH" secondAttribute="leading" constant="20" id="Sz7-7b-nMh"/>
                             <constraint firstAttribute="trailing" secondItem="zib-oU-55R" secondAttribute="trailing" constant="20" id="gbN-Nv-HTM"/>
+                            <constraint firstItem="Jze-zM-MIQ" firstAttribute="top" secondItem="zbB-xY-qhH" secondAttribute="top" id="it4-ml-xQs"/>
                             <constraint firstAttribute="trailing" secondItem="AbK-7l-gSq" secondAttribute="trailing" constant="20" id="tGr-nX-2mO"/>
                             <constraint firstItem="AbK-7l-gSq" firstAttribute="top" secondItem="zbB-xY-qhH" secondAttribute="top" constant="20" id="ti0-P0-4Rc"/>
                             <constraint firstItem="zib-oU-55R" firstAttribute="width" secondItem="KMA-6O-tkE" secondAttribute="width" id="ttB-Io-fLT"/>
+                            <constraint firstItem="tIT-v4-has" firstAttribute="leading" secondItem="zbB-xY-qhH" secondAttribute="leading" constant="20" id="wm9-RS-ePS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="seatImageView" destination="Jze-zM-MIQ" id="QFE-0x-jYi"/>
                         <outlet property="seatNameField" destination="AbK-7l-gSq" id="D7e-9d-ES8"/>
                     </connections>
                 </viewController>

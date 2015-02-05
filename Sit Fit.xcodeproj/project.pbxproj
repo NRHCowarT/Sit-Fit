@@ -21,12 +21,12 @@
 		9825E7C51A81547B00DF1E64 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9825E7C01A81547B00DF1E64 /* ParseCrashReporting.framework */; };
 		9825E7C61A81547B00DF1E64 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9825E7C11A81547B00DF1E64 /* ParseFacebookUtils.framework */; };
 		9825E7C71A81547B00DF1E64 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9825E7C21A81547B00DF1E64 /* ParseUI.framework */; };
-		988FE2921A8156AC00AA81F9 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9825E7BF1A81547B00DF1E64 /* Parse.framework */; };
 		988FE2941A81571600AA81F9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988FE2931A81571600AA81F9 /* AudioToolbox.framework */; };
 		988FE2981A81574800AA81F9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988FE2971A81574800AA81F9 /* MobileCoreServices.framework */; };
 		988FE29A1A81575D00AA81F9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988FE2991A81575D00AA81F9 /* SystemConfiguration.framework */; };
 		988FE29C1A81577800AA81F9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 988FE29B1A81577800AA81F9 /* libsqlite3.dylib */; };
 		988FE29F1A815B7700AA81F9 /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988FE29E1A815B7700AA81F9 /* FeedData.swift */; };
+		98AC18521A82616800FEA399 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9825E7BF1A81547B00DF1E64 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				988FE29C1A81577800AA81F9 /* libsqlite3.dylib in Frameworks */,
+				98AC18521A82616800FEA399 /* Parse.framework in Frameworks */,
 				988FE29A1A81575D00AA81F9 /* SystemConfiguration.framework in Frameworks */,
 				988FE2981A81574800AA81F9 /* MobileCoreServices.framework in Frameworks */,
 				988FE2941A81571600AA81F9 /* AudioToolbox.framework in Frameworks */,
@@ -82,7 +83,6 @@
 				9825E7C71A81547B00DF1E64 /* ParseUI.framework in Frameworks */,
 				9825E7C61A81547B00DF1E64 /* ParseFacebookUtils.framework in Frameworks */,
 				9825E7C31A81547B00DF1E64 /* Bolts.framework in Frameworks */,
-				988FE2921A8156AC00AA81F9 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,10 +158,10 @@
 		9825E7B51A81307300DF1E64 /* Main Feeds & Login */ = {
 			isa = PBXGroup;
 			children = (
+				9825E7941A810FB100DF1E64 /* Main.storyboard */,
 				9825E7921A810FB100DF1E64 /* LoginViewController.swift */,
 				9825E7B71A81310300DF1E64 /* FeedTableViewController.swift */,
 				9825E7B91A81315000DF1E64 /* MyFeedTableViewController.swift */,
-				9825E7941A810FB100DF1E64 /* Main.storyboard */,
 				9825E7B61A81309A00DF1E64 /* New Seat */,
 			);
 			name = "Main Feeds & Login";
@@ -446,6 +446,8 @@
 					Fit,
 					"$(PROJECT_DIR)/Sit",
 					Fit,
+					"$(PROJECT_DIR)/Sit",
+					Fit,
 				);
 				INFOPLIST_FILE = "Sit Fit/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -462,6 +464,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Sit",
+					Fit,
 					"$(PROJECT_DIR)/Sit",
 					Fit,
 					"$(PROJECT_DIR)/Sit",
