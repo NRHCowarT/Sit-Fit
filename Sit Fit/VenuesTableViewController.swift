@@ -1,56 +1,58 @@
 //
-//  FeedTableViewController.swift
+//  VenuesTableViewController.swift
 //  Sit Fit
 //
-//  Created by Nick Cowart on 2/3/15.
+//  Created by Nick Cowart on 2/5/15.
 //  Copyright (c) 2015 Nick Cowart. All rights reserved.
 //
 
 import UIKit
+import CoreLocation
 
-class FeedTableViewController: UITableViewController {
+var onceToken : dispatch_once_t = 0
+
+
+class VenuesTableViewController: UITableViewController,CLLocationManagerDelegate {
     
+    var lManager = CLLocationManager()
+    
+    var foundVenues: [AnyObject] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        lManager.requestWhenInUseAuthorization()
+        
+        lManager.delegate = self
+        
+        lManager.startUpdatingLocation()
+        
     }
     
-    func refreshFeed() {
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
-        FeedData.mainData().refreshFeedItems { () -> () in
+        dispatch_once(&onceToken) { () -> Void in
             
-            self.tableView.reloadData()
+            println(locations.last)
+            
+            if let location = locations.last as? CLLocation {
+                
+                self.foundVenues = FourSquareRequest.requestVenuesWithLocation(location)
+                
+                self.tableView.reloadData()
+                
+                
+                
+                // request to foursquare for venues with location
+            }
             
         }
         
-    }
-    
-//                THIS WILL MAKE FEED REFRESH
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         
-        refreshFeed()
-        
+        lManager.stopUpdatingLocation()
+
     }
 
-    @IBAction func addNewSeat(sender: AnyObject) {
-        
-        var newSeatSB = UIStoryboard(name: "NewSeat", bundle: nil)
-        var newSeatVC = newSeatSB.instantiateInitialViewController() as NewSeatViewController
-        
-        presentViewController(newSeatVC, animated: true, completion: nil)
-        
-    }
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -62,24 +64,33 @@ class FeedTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return FeedData.mainData().feedItems.count
-        
+        return foundVenues.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("feedCell", forIndexPath: indexPath) as FeedCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("venueCell", forIndexPath: indexPath) as UITableViewCell
 
-        let seat = FeedData.mainData().feedItems[indexPath.row]
+        let venue = foundVenues[indexPath.row] as [String:AnyObject]
         
-        cell.seatInfo = seat
-        
+        cell.textLabel?.text = venue["name"] as? String
         
         // Configure the cell...
 
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let venue = foundVenues[indexPath.row] as [String:AnyObject]
+        
+        // save the venue
+        FeedData.mainData().selectedVenue = venue
+        
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
