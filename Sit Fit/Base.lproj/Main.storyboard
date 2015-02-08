@@ -114,12 +114,37 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLh-h5-qPv" customClass="ArrowButton" customModule="Sit_Fit" customModuleProvider="target">
+                                            <rect key="frame" x="499" y="89" width="26" height="22"/>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="topInset">
+                                                    <real key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="bottomInset">
+                                                    <real key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                                    <real key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="strokeSize">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                    <color key="value" red="0.1227517293" green="0.78172348479999998" blue="0.090365150189999993" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="seatImageView" destination="OeT-U3-GRV" id="6dU-Uz-zuD"/>
                                     <outlet property="seatNameLabel" destination="8VD-QO-qQY" id="1N8-iS-Pfr"/>
-                                    <segue destination="jxk-cY-pr0" kind="show" id="vdD-Rh-4g3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -139,24 +164,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kg4-yC-TcN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2614" y="-371"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="CKl-BE-62u">
-            <objects>
-                <viewController id="jxk-cY-pr0" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2qX-dl-Rb7"/>
-                        <viewControllerLayoutGuide type="bottom" id="V7j-WK-6y4"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aZI-79-w0h">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BFi-id-Yn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3354" y="-371"/>
         </scene>
         <!--All Seats-->
         <scene sceneID="j3U-P7-miA">
@@ -203,7 +210,6 @@
                                 <connections>
                                     <outlet property="seatImageView" destination="qmf-6P-Ihu" id="u0L-Sp-gwI"/>
                                     <outlet property="seatNameLabel" destination="frP-ce-JKg" id="3m0-ue-osA"/>
-                                    <segue destination="PNi-3c-wsG" kind="show" id="Nb5-QV-3vb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -274,10 +280,10 @@
             </objects>
             <point key="canvasLocation" x="1091" y="1526"/>
         </scene>
-        <!--View Controller-->
+        <!--Seat Detail View Controller-->
         <scene sceneID="6ao-bA-pvU">
             <objects>
-                <viewController id="PNi-3c-wsG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="seatDetailVC" id="PNi-3c-wsG" customClass="SeatDetailViewController" customModule="Sit_Fit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4an-Sn-HWt"/>
                         <viewControllerLayoutGuide type="bottom" id="kcW-Lc-mit"/>
@@ -285,12 +291,27 @@
                     <view key="view" contentMode="scaleToFill" id="HCo-vT-8dF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EQL-CZ-IYA">
+                                <rect key="frame" x="0.0" y="-8" width="600" height="200"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Cs-i0-7fZ">
+                                <rect key="frame" x="0.0" y="210" width="101" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="seatImageView" destination="EQL-CZ-IYA" id="q78-hV-1fx"/>
+                        <outlet property="seatNameLabel" destination="6Cs-i0-7fZ" id="dRK-yp-Gny"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5g-JD-gUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3354" y="402"/>
+            <point key="canvasLocation" x="1794" y="1122"/>
         </scene>
         <!--My Seats-->
         <scene sceneID="Vad-LS-j00">

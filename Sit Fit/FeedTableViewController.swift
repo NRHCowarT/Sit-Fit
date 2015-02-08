@@ -80,6 +80,14 @@ class FeedTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        FeedData.mainData().selectedSeat = FeedData.mainData().feedItems[indexPath.row]
+        
+        var detailVC = storyboard?.instantiateViewControllerWithIdentifier("seatDetailVC") as UIViewController
+        
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.

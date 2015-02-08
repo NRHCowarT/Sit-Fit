@@ -24,8 +24,10 @@
 		98343D721A83B410006A4CCA /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98343D711A83B410006A4CCA /* FeedCell.swift */; };
 		98343D751A83CF3D006A4CCA /* FourSquareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98343D741A83CF3D006A4CCA /* FourSquareRequest.swift */; };
 		98343D781A83CFAF006A4CCA /* VenuesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98343D771A83CFAF006A4CCA /* VenuesTableViewController.swift */; };
-		98445FA61A83FAC100B4146B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9825E7BF1A81547B00DF1E64 /* Parse.framework */; };
 		98445FA81A83FB1400B4146B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98445FA71A83FB1400B4146B /* MapViewController.swift */; };
+		98445FA91A85049600B4146B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9825E7BF1A81547B00DF1E64 /* Parse.framework */; };
+		98445FAC1A85063900B4146B /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98445FAB1A85063900B4146B /* ArrowButton.swift */; };
+		98445FAE1A85169600B4146B /* SeatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98445FAD1A85169600B4146B /* SeatDetailViewController.swift */; };
 		988FE2941A81571600AA81F9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988FE2931A81571600AA81F9 /* AudioToolbox.framework */; };
 		988FE2981A81574800AA81F9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988FE2971A81574800AA81F9 /* MobileCoreServices.framework */; };
 		988FE29A1A81575D00AA81F9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988FE2991A81575D00AA81F9 /* SystemConfiguration.framework */; };
@@ -69,6 +71,8 @@
 		98343D741A83CF3D006A4CCA /* FourSquareRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourSquareRequest.swift; sourceTree = "<group>"; };
 		98343D771A83CFAF006A4CCA /* VenuesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesTableViewController.swift; sourceTree = "<group>"; };
 		98445FA71A83FB1400B4146B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		98445FAB1A85063900B4146B /* ArrowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
+		98445FAD1A85169600B4146B /* SeatDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatDetailViewController.swift; sourceTree = "<group>"; };
 		988FE2931A81571600AA81F9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		988FE2951A81572900AA81F9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		988FE2971A81574800AA81F9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -83,7 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				988FE29C1A81577800AA81F9 /* libsqlite3.dylib in Frameworks */,
-				98445FA61A83FAC100B4146B /* Parse.framework in Frameworks */,
+				98445FA91A85049600B4146B /* Parse.framework in Frameworks */,
 				988FE29A1A81575D00AA81F9 /* SystemConfiguration.framework in Frameworks */,
 				988FE2981A81574800AA81F9 /* MobileCoreServices.framework in Frameworks */,
 				988FE2941A81571600AA81F9 /* AudioToolbox.framework in Frameworks */,
@@ -126,6 +130,7 @@
 		9825E78D1A810FB100DF1E64 /* Sit Fit */ = {
 			isa = PBXGroup;
 			children = (
+				98445FAA1A85060B00B4146B /* IBViews */,
 				988FE29D1A815B1600AA81F9 /* Models */,
 				9825E7B51A81307300DF1E64 /* Main Feeds & Login */,
 				9825E78E1A810FB100DF1E64 /* Supporting Files */,
@@ -172,6 +177,7 @@
 				9825E7B91A81315000DF1E64 /* MyFeedTableViewController.swift */,
 				98343D711A83B410006A4CCA /* FeedCell.swift */,
 				98445FA71A83FB1400B4146B /* MapViewController.swift */,
+				98445FAD1A85169600B4146B /* SeatDetailViewController.swift */,
 				9825E7B61A81309A00DF1E64 /* New Seat */,
 			);
 			name = "Main Feeds & Login";
@@ -203,6 +209,14 @@
 			);
 			name = Frameworks;
 			path = "Sit Fit";
+			sourceTree = "<group>";
+		};
+		98445FAA1A85060B00B4146B /* IBViews */ = {
+			isa = PBXGroup;
+			children = (
+				98445FAB1A85063900B4146B /* ArrowButton.swift */,
+			);
+			name = IBViews;
 			sourceTree = "<group>";
 		};
 		988FE29D1A815B1600AA81F9 /* Models */ = {
@@ -320,8 +334,10 @@
 				9825E7931A810FB100DF1E64 /* LoginViewController.swift in Sources */,
 				98445FA81A83FB1400B4146B /* MapViewController.swift in Sources */,
 				9825E7BA1A81315000DF1E64 /* MyFeedTableViewController.swift in Sources */,
+				98445FAC1A85063900B4146B /* ArrowButton.swift in Sources */,
 				9825E7911A810FB100DF1E64 /* AppDelegate.swift in Sources */,
 				988FE29F1A815B7700AA81F9 /* FeedData.swift in Sources */,
+				98445FAE1A85169600B4146B /* SeatDetailViewController.swift in Sources */,
 				9825E7BC1A81520A00DF1E64 /* NewSeatViewController.swift in Sources */,
 				9825E7B81A81310300DF1E64 /* FeedTableViewController.swift in Sources */,
 				98343D781A83CFAF006A4CCA /* VenuesTableViewController.swift in Sources */,
@@ -468,6 +484,8 @@
 					Fit,
 					"$(PROJECT_DIR)/Sit",
 					Fit,
+					"$(PROJECT_DIR)/Sit",
+					Fit,
 				);
 				INFOPLIST_FILE = "Sit Fit/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -484,6 +502,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Sit",
+					Fit,
 					"$(PROJECT_DIR)/Sit",
 					Fit,
 					"$(PROJECT_DIR)/Sit",
