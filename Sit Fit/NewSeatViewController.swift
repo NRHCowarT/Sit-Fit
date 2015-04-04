@@ -25,6 +25,7 @@ class NewSeatViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         cancelSeatButton.layer.cornerRadius = 3
         saveSeatButton.layer.cornerRadius = 3
         

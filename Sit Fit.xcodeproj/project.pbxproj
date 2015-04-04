@@ -32,7 +32,7 @@
 		988FE29A1A81575D00AA81F9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988FE2991A81575D00AA81F9 /* SystemConfiguration.framework */; };
 		988FE29C1A81577800AA81F9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 988FE29B1A81577800AA81F9 /* libsqlite3.dylib */; };
 		988FE29F1A815B7700AA81F9 /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988FE29E1A815B7700AA81F9 /* FeedData.swift */; };
-		98CC3D941AD067BA0099D156 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9825E7C21A81547B00DF1E64 /* ParseUI.framework */; };
+		98ACE2901AD07E04006224A6 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9825E7C21A81547B00DF1E64 /* ParseUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98CC3D941AD067BA0099D156 /* ParseUI.framework in Frameworks */,
+				98ACE2901AD07E04006224A6 /* ParseUI.framework in Frameworks */,
 				988FE29C1A81577800AA81F9 /* libsqlite3.dylib in Frameworks */,
 				98427E901ABA0ACA0094E3BA /* Parse.framework in Frameworks */,
 				988FE29A1A81575D00AA81F9 /* SystemConfiguration.framework in Frameworks */,
@@ -498,6 +498,8 @@
 					Fit,
 					"$(PROJECT_DIR)/Sit",
 					Fit,
+					"$(PROJECT_DIR)/Sit",
+					Fit,
 				);
 				INFOPLIST_FILE = "Sit Fit/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -514,6 +516,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/Sit",
+					Fit,
 					"$(PROJECT_DIR)/Sit",
 					Fit,
 					"$(PROJECT_DIR)/Sit",
