@@ -16,12 +16,17 @@ class NewSeatViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var seatNameField: UITextField!    
     @IBOutlet weak var seatImageView: UIImageView!
     @IBOutlet weak var selectVenueButton: UIButton!
+    @IBOutlet weak var saveSeatButton: UIButton!
+    @IBOutlet weak var cancelSeatButton: UIButton!
     
     var imagePicker = UIImagePickerController()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cancelSeatButton.layer.cornerRadius = 3
+        saveSeatButton.layer.cornerRadius = 3
         
         imagePicker.delegate = self
         imagePicker.sourceType = .Camera

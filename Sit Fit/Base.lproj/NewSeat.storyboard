@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BnD-be-x6K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BnD-be-x6K">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -133,6 +133,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="cancelSeatButton" destination="KMA-6O-tkE" id="MUl-CK-jZs"/>
+                        <outlet property="saveSeatButton" destination="zib-oU-55R" id="HVO-uK-4dZ"/>
                         <outlet property="seatImageView" destination="Jze-zM-MIQ" id="QFE-0x-jYi"/>
                         <outlet property="seatNameField" destination="AbK-7l-gSq" id="D7e-9d-ES8"/>
                         <outlet property="selectVenueButton" destination="Xou-y4-bKI" id="qau-Pr-Nhq"/>

@@ -12,11 +12,14 @@ let _mainData: FeedData = FeedData()
 
 class FeedData: NSObject {
     
+    
+    var correctVenue:[AnyObject] = []
+
     var selectedVenue: [String:AnyObject]?
     var selectedSeat: PFObject?
     
     var feedItems: [PFObject] = []
-//    var myfeedItems: [PFObject] = []
+    var myfeedItems: [PFObject] = []
     
     class func mainData() -> FeedData {
         
@@ -39,7 +42,6 @@ class FeedData: NSObject {
             completion()
             
         }
-        
     }
     
     func refreshMyFeedItems(completion:() -> () ) {
